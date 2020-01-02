@@ -1,14 +1,19 @@
 package dao;
 
+import java.util.Map;
 import java.util.Set;
 
 import entities.*;
 
 public interface ICustomerDao {
 
-	public void addCustomer(Customer c);
-
 	public Customer findByMobileNo(String mobileno);
+
+	public void rechargeAccount(Customer c, double amount);
+
+	public Customer createAccount(String mobileno, double balance, String name);
+
+	public Map<String, Customer> getStore();
 
 	Set<Customer> allCustomers();
 

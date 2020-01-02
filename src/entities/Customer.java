@@ -3,13 +3,23 @@ package entities;
 public class Customer {
 	private String mobileno;
 	private double balance;
+	private String name;
 
 	public Customer() {
 	}
 
-	public Customer(String mobileno, double balance) {
+	public Customer(String mobileno, double balance, String name) {
 		this.mobileno = mobileno;
 		this.balance = balance;
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getMobileno() {
@@ -26,6 +36,10 @@ public class Customer {
 
 	public void setBalance(double balance) {
 		this.balance = balance;
+	}
+
+	public void addAmount(double amount) {
+		balance = balance + amount;
 	}
 
 	@Override
@@ -45,5 +59,12 @@ public class Customer {
 	public int hashCode() {
 		return mobileno.hashCode();
 	}
+
+	@Override
+	public String toString() {
+		return "Customer [mobileno=" + mobileno + ", balance=" + balance + ", name=" + name + "]";
+	}
+	
+
 
 }
